@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/myapp_master.css' %}">
+  </head>
+  <body>
+    <header id='myheader'>
+      <div class="">
+        <button type="submit" name="HOME" class='headingbuttons'> <a class="homelink" href="{% url 'wordcountpage' %}">HOME</a> </button>
+        <button type="submit" class='headingbuttons'> <a class="buttonlinks" href="{% url 'about' %}">About</a> </button>
+        <button type="submit" class='headingbuttons'> <a class="buttonlinks" href="{% url 'about' %}">Previous results (yet doesn't working)</a> </button>
+      </div>
+
+      <hr>
+
+      <div class="righthanded">
+        <ion-icon name="person"></ion-icon>
+      </div>
+    </header>
+
+    <div class="main_block">
+      {% block base_block %}
+      {% endblock %}
+    </div>
+
+    <!-- FONT -->
+    <!-- https://ionicons.com/usage#md-add-circle -->
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
+
+  </body>
+</html>

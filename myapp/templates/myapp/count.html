@@ -1,0 +1,17 @@
+{% extends 'myapp/base.html' %}
+{% block base_block %}
+
+  <p>Your text: <i>«{{ fulltext }}»</i></p>
+  <p>There are <b>{{ count }}</b> words in your text.</p>
+  <p>Words are:</p>
+
+    {% for word, counttotal in wordcount %}
+      <p>{{ word }}: {{ counttotal }}</p>
+    {% endfor %}
+
+  <form action="{% url 'wordcountpage' %}" method="post">
+    {% csrf_token %}
+    <input type="submit" name="" value="back">
+  </form>
+
+{% endblock %}

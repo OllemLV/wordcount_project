@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+{% block base_block %}
+
+  <h1>My new page</h1>
+
+  <form action="{% url 'count' %}" method="post">
+    {% csrf_token %}
+    <p>And here you can put your text:</p>
+    <textarea cols="40" rows="10" name="fulltext"></textarea>
+    <br>
+    <input type="submit" value="submit">
+  </form>
+
+{% endblock %}
